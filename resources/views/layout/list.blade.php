@@ -6,10 +6,7 @@
     <title>@yield('title', 'My App')</title>
 </head>
 <body>
-    <header>
-        @include('components.header')
-    </header>
-
+    
     <h1>List Product</h1>
     <div class="container">
         <main>
@@ -17,8 +14,5 @@
         </main>
     </div>
 
-    <footer>
-        @include('components.footer')
-    </footer>
 </body>
 </html>

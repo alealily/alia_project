@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ListProdukController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get("/produk", [ProdukController::class, "produk"]);
+
+Route::get('/listproduk', [ListProdukController::class, 'show']);
