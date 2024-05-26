@@ -18,16 +18,20 @@
                         Id
                     </th>
                     <th scope="col" class="px-6 py-3 text-center bg-gray-300"
-                        style="font-size: 18px; font-family: cambria;">
+                        style="font-size: 17px; font-family: cambria;">
                         Nama Produk
                     </th>
                     <th scope="col" class="px-6 py-3 text-center bg-gray-300"
-                        style="font-size: 18px; font-family: cambria;">
+                        style="font-size: 17px; font-family: cambria;">
                         Deskripsi
                     </th>
                     <th scope="col" class="px-6 py-3 text-center bg-gray-300"
-                        style="font-size: 18px; font-family: cambria;">
+                        style="font-size: 17px; font-family: cambria;">
                         Harga
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-center bg-gray-300"
+                        style="font-size: 17px; font-family: cambria;">
+                        Action
                     </th>
                 </tr>
             </thead>
@@ -44,8 +48,15 @@
                     <td class="px-6 py-4 bg-gray-100" style="font-family: sans-serif;">
                         {{ $desc [$index] }}
                     </td>
-                    <td class="px-6 py-4 bg-gray-100" style="font-family: sans-serif;">
+                    <td class="px-6 py-4 bg-gray-100 text-center" style="font-family: sans-serif;">
                         {{ $harga [$index] }}
+                    </td>
+                    <td class="text-center bg-gray-100">
+                        <form action="{{ route('produk.delete', $id[$index]) }}" method="POST">
+                            @csrf
+                            @method ('DELETE')
+                            <button class="font-medium text-red-600 dark:text-red-500 hover:underline" style="font-weight: sans-serif;" type="submit" onclick="return confirm('Are you sure want to delete {{ $item }}?')">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
